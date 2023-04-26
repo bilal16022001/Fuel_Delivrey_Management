@@ -1,0 +1,195 @@
+body {
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.parent input {
+  height: 35px;
+  padding-left: 10px;
+}
+
+.parent textarea {
+  height: 300px;
+}
+
+.login-form {
+  background-color: #f2f2f2;
+  padding: 50px;
+  height: 100vh;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form input[type=email] {
+  background-color: #fff;
+}
+
+.form input[type=password] {
+  background-color: #fff;
+}
+
+.form button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form button[type=submit]:hover {
+  background-color: #3e8e41;
+}
+
+.link-to-home {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.form img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+.login-container .form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-container input[type=text],
+.login-container input[type=password] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.login-container input[type=submit] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container input[type=submit]:hover {
+  background-color: #3e8e41;
+}
+
+.sidebar .sidebar-item {
+  padding: 13px;
+}
+
+.sidebar .all {
+  padding: 35px;
+}
+
+.sidebar .all a {
+  color: #fff;
+}
+
+.sidebar .all .dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.dropdown-menu {
+  background: none;
+  position: static !important;
+  transform: none !important;
+}
+
+table tr:nth-child(even) {
+  background-color: rgba(229, 229, 229, 0.3019607843);
+}
+
+tr td {
+  padding: 10px;
+}
+
+.admin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.admin div {
+  padding: 10px;
+}
+
+.admin .con {
+  font-size: 40px;
+}
+
+.admin > div {
+  border: 3px solid #e5e5e5;
+  display: flex;
+  position: relative;
+}
+
+.admin > div div {
+  margin-right: 10px;
+}
+
+.view a {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+
+/*-----end dashboard---*//*# sourceMappingURL=App.css.map */

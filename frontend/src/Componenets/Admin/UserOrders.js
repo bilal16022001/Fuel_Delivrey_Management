@@ -1,0 +1,84 @@
+import React, { useEffect } from 'react'
+import Sidebar from './Sidebar'
+import Header from '../Header'
+import styled from 'styled-components'
+import { Link, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import {fetchOrdersFuel} from '../redux-toolkit/Data/DataSlice'
+
+function UserOrders() {
+    const {id} = useParams();
+    const FuelOrders = useSelector((state) => state.AllData.OrdersFuel);
+    const dispatch = useDispatch();
+    useEffect(() => {
+       dispatch(fetchOrdersFuel());
+    },[])
+  return (
+    <div className=' d-flex'>
+    <Sidebar/>
+    <div className='w-100'>
+       <Header/>
+       <Content className=''>
+    <div className='content'>
+      <div class="parent p-3">
+    <h2 class="text-center mb-3">{FuelOrders.filter(it => it.user_id == id).map(item => item.user.name)[0]}'s Orders</h2>
+    <div class="">
+        <div class="table-responsive">
+        <table className="main-table text-center table table-bordered">
+                     <tr>
+                          <td>#</td>
+                          <td>Order Number</td>
+                          <td>Name</td>
+                          <td>Mobile Phone</td>
+                          <td>Email</td>
+                          <td>Name Of Fuel Station</td>
+                          <td>Status</td>
+                          <td>Order date</td>
+                          <td>Action</td>
+                    </tr>
+
+                    {FuelOrders.filter(it => it.user.id == id).map(item => (
+                       <tr>
+                         <td>{item.id}</td>
+                         <td>{item.Order_Number}</td>
+                         <td>{item.user.name}</td>
+                         <td>{item.user.email}</td>
+                         <td>{item.user.Phone}</td>
+                         <td>{item.fuel_station.NameStation}</td>
+                         <td>
+                             {item.Statuts == 0 ? "Not Updated Yet" : item.Statuts == 1 ? "Confimred" : item.Statuts == 2 ? "On The Way" : item.Statuts == 3 ? "Delivred" : "Cancelled"}</td>
+                         <td>{item.created_at.slice(0,10)}</td>
+                         <td><Link to={`/OrderDetail/${item.id}`}>view</Link></td>
+                       </tr>
+                    ))}
+
+                  </table>
+      </div>
+  </div>
+
+
+</div>
+
+
+</div>
+  
+    </Content>
+    </div>
+</div>
+
+  )
+}
+
+export default UserOrders
+
+const Content = styled.div`
+   background-color:#e5e5e5;
+   height:100vh;  
+   padding:30px;
+   .content{
+     background-color:#fff;
+     border-radius:7px;
+  }
+`
+
+
